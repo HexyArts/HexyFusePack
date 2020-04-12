@@ -1,0 +1,38 @@
+--[[-- 
+Version: 1.0.0
+Last update: 2020-04-12
+Developed on: Fusion 9
+
+Details:
+A simple value input.
+--]]--
+
+
+FuRegisterClass("ValueInput", CT_Tool, {
+  REGS_Name = "Value Input Fuse",
+  REGS_Category = "Fuses",
+  REGS_OpDescription = "Simple value input",
+  REGS_Company = "HexyArts",
+  REGS_URL = "https://github.com/HexyArts/HexyFusePack",
+  REG_OpNoMask = true,
+  REG_NoCommonCtrls = true,
+  REG_NoPreCalcProcess = true,
+  REG_Fuse_NoEdit = true,
+  REG_Fuse_NoReload = true,
+  REG_SupportsDoD = true,
+  REG_OpNoMask = true,
+  REG_NoBlendCtrls = true,
+  REG_NoObjMatCtrls = true,
+  REG_NoMotionBlurCtrls = true,
+  })
+
+function Create()
+  InValue = self:AddInput("Value", "Value", {
+    LINKID_DataType = "Number",
+    INPID_InputControl = "SliderControl",
+    INP_MinScale = -1.0,
+    INP_MaxScale = 1.0,
+    INP_Default = 0,
+    INP_Integer = false,
+    })
+end
